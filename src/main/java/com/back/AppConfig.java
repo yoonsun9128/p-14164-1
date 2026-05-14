@@ -13,4 +13,13 @@ public class AppConfig {
 //		System.out.println("personService 빈 생성됨!");
 //		return new PersonService();
 //	}
+	@Bean
+	PersonRepository personRepository() {
+		return new PersonRepository(1);
+	}
+
+	@Bean
+	PersonRepository personRepositoryV2() {
+		return new PersonRepository(2);
+	}
 }
