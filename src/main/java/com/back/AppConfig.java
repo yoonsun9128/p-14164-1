@@ -29,15 +29,15 @@ public class AppConfig {
 		return 55;
 	}
 
-	@Bean
-	@Order(2)
-	public ApplicationRunner myApplicationRunner() {
-		return new MyApplicationRunner();
-	}
-
-	@Bean
-	@Order(2)
-	public ApplicationRunner myApplicationRunner2() {
-		return new MyApplicationRunner2();
-	}
+//	@Bean
+//	@Order(2)
+//	public ApplicationRunner myApplicationRunner() {
+//		return new MyApplicationRunner();
+//	}
+//
+//	@Bean
+//	@Order(2)
+//	public ApplicationRunner myApplicationRunner2() {
+//		return new MyApplicationRunner2();
+//	}
 }
