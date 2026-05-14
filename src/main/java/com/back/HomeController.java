@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequiredArgsConstructor
 public class HomeController {
 	// 스프링이 주입하는게 아닌 내가 직접 생산
-	private final PersonService personService = new PersonService();
+	private final PersonService personService;
 
 	@GetMapping("/")
 	@ResponseBody
