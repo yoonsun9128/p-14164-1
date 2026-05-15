@@ -3,11 +3,13 @@ package com.back.domain.wiseSaying.wiseSaying.controller;
 import com.back.domain.wiseSaying.wiseSaying.entity.WiseSaying;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Controller
@@ -51,5 +53,24 @@ public class WiseSayingController {
 						.collect(Collectors.joining("\n"))
 				+
 				"</ul>";
+	}
+
+	@GetMapping("/wiseSayings/delete/{id}")
+	@ResponseBody
+	public String delete(@PathVariable int id) {
+		WiseSaying wiseSaying = findById(id)
+				.orElseThrow(
+						() -> new IllegalArgumentException("%d번 명언은 존재하지 않습니다.".formatted(id))
+				);
+
+		wiseSayings.remove(wiseSaying);
+
+		return "%d번 명언이 삭제되었습니다.".formatted(id);
+	}
+	private Optional<WiseSaying> findById(int id) {
+		return wiseSayings
+				.stream()
+				.filter(wiseSaying -> wiseSaying.getId() == id)
+				.findFirst();
 	}
 }
