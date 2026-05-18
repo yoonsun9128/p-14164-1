@@ -11,6 +11,7 @@ import lombok.Setter;
 
 @Getter
 @NoArgsConstructor
+@Entity
 public class WiseSaying {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

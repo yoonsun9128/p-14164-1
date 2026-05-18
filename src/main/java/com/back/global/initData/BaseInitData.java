@@ -20,6 +20,13 @@ public class BaseInitData {
 			wiseSayingService.write("명언 3", "작가 3");
 			wiseSayingService.write("명언 4", "작가 4");
 			wiseSayingService.write("명언 5", "작가 5");
+			wiseSayingService.write("""
+                    - 규칙적인 식사를 해라
+                    - 규칙적인 운동을 해라
+                    
+                    ### 귀여운 강아지 사진
+                    ![img](https://picsum.photos/id/237/200/300)
+                    """.stripIndent(), "작가 5");
 		};
 	}
 }
