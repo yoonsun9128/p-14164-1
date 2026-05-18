@@ -1,14 +1,11 @@
 package com.back.domain.wiseSaying.wiseSaying.controller;
 
-import com.back.domain.wiseSaying.wiseSaying.WiseSayingService;
+import com.back.domain.wiseSaying.wiseSaying.service.WiseSayingService;
 import com.back.domain.wiseSaying.wiseSaying.entity.WiseSaying;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Controller
